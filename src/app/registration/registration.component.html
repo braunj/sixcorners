@@ -1,24 +1,6 @@
+<h2>Registration Form</h2>
 <div class="container">
-  <img src="../assets/images/welcome.jpg" width="300" />
-  <h1>Six Corners of Utah Rally</h1>
-  <h3>Memorial Day Weekend</h3>
-  <h4>29-31 May 2021</h4>
-  <h2><i>Sign up now for the latest information!</i></h2>
-  <ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>
-  <form>
+  <form #regForm="ngForm">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input id="name" name="name" class="form-control" placeholder="Enter your name">
@@ -33,6 +15,15 @@
       <label class="form-check-label" for="emailOffers">
         Keep me up to date on Rally news - I know you're too lazy to sell my data!
       </label>
+    </div>
+    <div class="form-group">
+      <label for="entryClass">Entry Class</label>
+      <select class="form-control" id="entryClass" ngModel>
+        <option>Street Motorcycle</option>
+        <option>Adventure Motorcycle</option>
+        <option>Vintage (1979 or older)</option>
+        <option>Scooter (10 inch wheels or smaller)</option>
+      </select>
     </div>
     <button class="btn btn-primary">Submit</button>
   </form>
