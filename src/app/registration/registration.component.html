@@ -1,6 +1,6 @@
 <h2>Registration Form</h2>
 <div class="container">
-  <form #regForm="ngForm">
+  <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input id="name" name="name" class="form-control" placeholder="Enter your name">
@@ -18,11 +18,11 @@
     </div>
     <div class="form-group">
       <label for="entryClass">Entry Class</label>
-      <select class="form-control" id="entryClass" ngModel>
-        <option>Street Motorcycle</option>
-        <option>Adventure Motorcycle</option>
-        <option>Vintage (1979 or older)</option>
-        <option>Scooter (10 inch wheels or smaller)</option>
+      <select class="form-control" name="entryClass" id="entryClass" ngModel>
+        <option value=0>Street Motorcycle</option>
+        <option value=1>Adventure Motorcycle</option>
+        <option value=2>Vintage (1979 or older)</option>
+        <option value=3>Scooter (10 inch wheels or smaller)</option>
       </select>
     </div>
     <button class="btn btn-primary">Submit</button>
