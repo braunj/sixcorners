@@ -12,7 +12,7 @@
         id="name"
         name="name"
         class="form-control"
-        placeholder="Enter your name"
+        placeholder="Enter your name "
         required
         [(ngModel)]="rider.name"
         #nameTest="ngModel"
@@ -30,18 +30,37 @@
     </div>
 
     <div class="form-group">
-      <label for="email">Email Address*</label>
+      <label for="mobile">Mobile Number*</label>
+      <input
+        type="tel"
+        name="mobile"
+        class="form-control"
+        placeholder="Required because this is how you will send us your locations"
+        required
+        [(ngModel)]="rider.mobile"
+        #mobileField="ngModel"
+      />
+      <div
+        [hidden]="mobileField.valid || !homeForm.submitted"
+        class="alert alert-danger"
+      >
+        Enter your mobile number
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
       <input
         type="email"
         name="email"
         class="form-control"
-        placeholder="Email address"
+        placeholder="Email Address"
         required
         [(ngModel)]="rider.email"
-        #emailTest="ngModel"
+        #emailField="ngModel"
       />
       <div
-        [hidden]="emailTest.valid || !homeForm.submitted"
+        [hidden]="emailField.valid || !homeForm.submitted"
         class="alert alert-danger"
       >
         Enter your email address
@@ -61,6 +80,38 @@
         Keep me up to date on Rally news - I know you're too lazy to sell my
         data!
       </label>
+    </div>
+
+    <strong>I prefer:</strong>
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="commPref"
+          id="commPrefMobile"
+          value="text"
+          checked
+          [(ngModel)]="rider.commPref"
+        />
+        <label class="form-check-label" for="comPrefMobile">Text</label>
+      </div>
+
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="commPref"
+          id="commPrefEmail"
+          value="email"
+          [(ngModel)]="rider.commPref"
+        />
+        <label class="form-check-label" for="comPrefEmail">Email</label>
+      </div>
+    </div>
+
+    <div [hidden]="!postError" class="alert alert-danger">
+      {{ postErrorMsg }}
     </div>
 
     <button class="btn btn-primary">Submit</button>

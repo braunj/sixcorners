@@ -3,7 +3,7 @@ import { Rider } from './Rider';
 import { Vehicle } from './Vehicle';
 
 export interface Entry {
-  idx: number;
+  mobile: string; // index
   towel: string;
   rider: Rider;
   vehicle: Vehicle;

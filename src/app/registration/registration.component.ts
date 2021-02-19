@@ -14,24 +14,32 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
+  // replace with real classes
+  // see pluralsight.angular forms.http form posting.retrieving data for select element
+  classEnum = ['one', 'two', 'three'];
+
   rider: Rider = {
+    mobile: '',
     name: '',
     nickname: '',
     email: '',
     emailUpdates: true,
-    text: '',
+    note: '',
+    commPref: '',
   };
 
   vehicle: Vehicle = {
+    mobile: '',
     year: '',
     make: '',
     model: '',
     color: '',
     vin4: '', // last 4 numbers
+    active: true,
   };
 
   entry: Entry = {
-    idx: 0,
+    mobile: '',
     towel: '',
     rider: this.rider,
     vehicle: this.vehicle,
