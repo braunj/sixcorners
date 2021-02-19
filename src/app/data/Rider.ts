@@ -1,9 +1,10 @@
 import { Address } from './Address';
 
-export class Rider {
-  name: string = '';
-  nickname: string = '';
-  email: string = '';
-  text: string = '';
-  address: Address = new Address();
+export interface Rider {
+  name: string;
+  nickname: string;
+  email: string;
+  emailUpdates: boolean;
+  sms: string;
+  note: string;
 }

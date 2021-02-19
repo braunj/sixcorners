@@ -1,4 +1,4 @@
-enum EntryClass {
+export enum EntryClass {
   unknown = 'Unknown',
   street = 'Street',
   dirt = 'Dirt',
@@ -6,4 +6,3 @@ enum EntryClass {
   scooter = 'Scooter',
   vintage = 'Vintage',
 }
-export default EntryClass;

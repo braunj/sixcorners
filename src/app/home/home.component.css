@@ -1,0 +1,23 @@
+.formBorder {
+  border: solid 1px plum;
+  border-radius: 25px;
+  padding: 1em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.ng-touched {
+}
+.ng-untouched {
+}
+.ng-valid {
+  border: 2px solid green;
+}
+.field-error {
+  border: 1px solid red;
+}
+.ng-pristine {
+}
+/* .ng-dirty.ng-invalid {
+  border: 5px solid purple;
+} */
