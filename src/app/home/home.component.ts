@@ -1,5 +1,9 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Component, NgModule, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  NgModule,
+  OnInit,
+} from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { DataService } from '../data/data.service';
 import { EntryClass } from '../data/EntryClass';
@@ -11,6 +15,7 @@ import { Rider } from '../data/Rider';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  slider = 0;
   rider: Rider = {
     mobile: '',
     name: '',
@@ -24,6 +29,8 @@ export class HomeComponent implements OnInit {
   postError = false;
   postErrorMsg = '';
 
+  singleModel = 11;
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {}
@@ -31,6 +38,7 @@ export class HomeComponent implements OnInit {
   onFocus(field: NgModel) {
     console.log('onFocus', field.pristine);
   }
+
   onBlur(field: NgModel) {
     console.log('onBlur', field.valid);
   }
