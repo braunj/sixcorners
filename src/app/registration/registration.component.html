@@ -1,6 +1,7 @@
 <h2>Registration Form</h2>
 <div class="container">
   <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+    <!-- name -->
     <div class="form-group">
       <label for="name">Your Name</label>
       <input
@@ -10,6 +11,7 @@
         placeholder="Enter your name"
       />
     </div>
+    <!-- email -->
     <div class="form-group">
       <label for="email">Email Address</label>
       <input
@@ -18,35 +20,80 @@
         class="form-control"
         placeholder="Email address"
       />
+      <!-- offers checkbox -->
+      <div class="form-check form-group">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="emailOffers"
+          name="emailOffers"
+        />
+        <!-- [(ngModel)]="us      erSettings.emailOffers"> -->
+        <label class="form-check-label" for="emailOffers">
+          Keep me up to date on Rally news - I know you're too lazy to sell my
+          data!
+        </label>
+      </div>
+      <hr />
+      <!-- mobile -->
     </div>
-    <div class="form-check form-group">
+    <div class="form-group">
+      <label for="email">Mobile Number - used for scoring</label>
       <input
-        class="form-check-input"
-        type="checkbox"
-        value=""
-        id="emailOffers"
-        name="emailOffers"
+        id="mobile"
+        name="mobile"
+        class="form-control"
+        placeholder="Mobile Number"
       />
-      <!-- [(ngModel)]="userSettings.emailOffers"> -->
-      <label class="form-check-label" for="emailOffers">
-        Keep me up to date on Rally news - I know you're too lazy to sell my
-        data!
-      </label>
     </div>
-
-    <p *ngFor="let enum of classEnum">
-      {{ enum }}
-    </p>
-
+    <!-- entry class -->
     <div class="form-group">
       <label for="entryClass">Entry Class</label>
       <select class="form-control" name="entryClass" id="entryClass" ngModel>
         <option value="0">Street Motorcycle</option>
         <option value="1">Adventure Motorcycle</option>
         <option value="2">Vintage (1979 or older)</option>
-        <option value="3">Scooter (10 inch wheels or smaller)</option>
+        <option value="3">Scooter (12 inch wheels or smaller)</option>
       </select>
     </div>
+    <!-- vehicle -->
+    <div class="form-group">
+      <label for="vehicleYear">Vehicle Info</label>
+      <input
+        id="vehicleYear"
+        name="vehicleYear"
+        class="form-control"
+        placeholder="Year"
+      />
+      <input
+        id="vehicleMake"
+        name="vehicleMake"
+        class="form-control"
+        placeholder="Make"
+      />
+      <input
+        id="vehicleModel"
+        name="vehicleModel"
+        class="form-control"
+        placeholder="Model"
+      />
+      <input
+        id="vehicleColor"
+        name="vehicleColor"
+        class="form-control"
+        placeholder="Color"
+      />
+      <input
+        id="vehicleVIN4"
+        name="vehicleVIN4"
+        class="form-control"
+        placeholder="Last 4 of VIN"
+        minLength="4"
+        maxlength="4"
+      />
+    </div>
+
     <button class="btn btn-primary">Submit</button>
   </form>
   <hr />

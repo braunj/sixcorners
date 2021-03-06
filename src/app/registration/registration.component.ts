@@ -14,8 +14,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-  // replace with real classes
-  // see pluralsight.angular forms.http form posting.retrieving data for select element
+  // // replace with real classes
+  // // see pluralsight.angular forms.http form posting.retrieving data for select element
   classEnum = ['one', 'two', 'three'];
 
   rider: Rider = {
@@ -47,7 +47,9 @@ export class RegistrationComponent implements OnInit {
     entryDate: new Date(),
   };
 
-  constructor(private data: DataService, private entryClass: EntryClass) {}
+  //constructor(private data: DataService, private entryClass: EntryClass) {}
+  constructor(private data: DataService) {}
+  // constructor(private entryClass: EntryClass) {}
 
   ngOnInit(): void {}
 
