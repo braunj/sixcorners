@@ -1,15 +1,14 @@
-<h1>{{ title }}</h1>
+<img src="../assets/images/welcome.jpg" width="300" />
+<span id="title">Six Corners of Utah Rally</span>
+<span id="subTitle">29-31 May 2021</span>
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-<nav>
-  <ul>
-    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li>
-      <a routerLink="/registration" routerLinkActive="active">Registration</a>
-    </li>
-    <li>
-      <a routerLink="/rules" routerLinkActive="active">Rules</a>
-    </li>
-  </ul>
-</nav>
+<div class="topnav" id="myTopnav">
+  <a routerLink="/home" routerLinkActive="active">Home</a>
+  <a routerLink="/registration" routerLinkActive="active">Registration</a>
+  <a routerLink="/rules" routerLinkActive="active">Rules</a>
+</div>
+
 <!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>
+<hr />
+<footer>&copy; 6Corners Rally Committee</footer>

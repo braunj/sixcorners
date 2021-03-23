@@ -1,9 +1,12 @@
-<h2>Registration Form</h2>
 <div class="container">
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <form
+    [formGroup]="registrationForm"
+    (ngSubmit)="onSubmit()"
+    class="formBorder"
+  >
     <!-- name -->
     <div class="form-group row mb-2">
-      <label class="col-md-2 col-form-label" for="riderNameId">Your Name</label>
+      <label class="col-md-2 col-form-label" for="riderNameId">Name</label>
       <div class="col-md-8">
         <input
           class="form-control"
@@ -257,8 +260,6 @@
       Registration Complete: {{ vehicle.active }}
     </div>
   </form>
-  <hr />
-  <footer>&copy; 6Corners Rally Committee</footer>
 </div>
 <br />
 Dirty: {{ registrationForm.dirty }}
