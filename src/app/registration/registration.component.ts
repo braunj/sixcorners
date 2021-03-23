@@ -53,6 +53,8 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
+    this.vehicle.active = true;
+    this.registrationForm.patchValue({ vehicleActive: this.vehicle.active });
     console.log('submitted: ', this.registrationForm);
     console.log('saved: ', JSON.stringify(this.registrationForm?.value));
   }

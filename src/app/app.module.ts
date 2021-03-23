@@ -11,9 +11,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegistrationComponent],
+  declarations: [AppComponent, HomeComponent, RegistrationComponent, RulesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
