@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Address } from '../data/Address';
-import { DataService } from '../data/data.service';
-import { Entry } from '../data/Entry';
-import { Rider } from '../data/Rider';
-import { Vehicle } from '../data/Vehicle';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { EntryClass } from '../data/EntryClass';
-import { NgForm } from '@angular/forms';
+import { DataService } from '../data/data.service';
+import { Rider } from '../data/Rider';
 
 @Component({
   selector: 'app-registration',
@@ -14,46 +10,28 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-  // // replace with real classes
-  // // see pluralsight.angular forms.http form posting.retrieving data for select element
-  classEnum = ['one', 'two', 'three'];
+  rider = new Rider('', '', '', '', true, '', '');
+  registrationForm: FormGroup = new FormGroup({});
 
-  rider: Rider = {
-    mobile: '',
-    name: '',
-    nickname: '',
-    email: '',
-    emailUpdates: true,
-    note: '',
-    commPref: '',
-  };
+  constructor(private fb: FormBuilder, private data: DataService) {}
 
-  vehicle: Vehicle = {
-    mobile: '',
-    year: '',
-    make: '',
-    model: '',
-    color: '',
-    vin4: '', // last 4 numbers
-    active: true,
-  };
+  ngOnInit() {
+    this.registrationForm = this.fb.group({
+      riderName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(30),
+        ],
+      ],
+      riderEmail: ['', [Validators.required, Validators.email]],
+      riderEmailUpdates: true,
+    });
+  }
 
-  entry: Entry = {
-    mobile: '',
-    towel: '',
-    rider: this.rider,
-    vehicle: this.vehicle,
-    entryClass: EntryClass.unknown,
-    entryDate: new Date(),
-  };
-
-  //constructor(private data: DataService, private entryClass: EntryClass) {}
-  constructor(private data: DataService) {}
-  // constructor(private entryClass: EntryClass) {}
-
-  ngOnInit(): void {}
-
-  onSubmit(form: NgForm) {
-    console.log('submitted');
+  onSubmit() {
+    console.log('submitted: ', this.registrationForm);
+    console.log('saved: ', JSON.stringify(this.registrationForm?.value));
   }
 }

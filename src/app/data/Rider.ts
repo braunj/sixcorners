@@ -1,11 +1,13 @@
 import { Address } from './Address';
 
-export interface Rider {
-  mobile: string; // index
-  name: string;
-  nickname: string;
-  email: string;
-  emailUpdates: boolean;
-  commPref: string;
-  note: string;
+export class Rider {
+  constructor(
+    public mobile: string,
+    public name: string,
+    public nickname: string,
+    public email: string,
+    public emailUpdates = true,
+    public commPref: string,
+    public note: string
+  ) {}
 }
