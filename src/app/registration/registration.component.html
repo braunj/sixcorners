@@ -72,6 +72,173 @@
       </label>
     </div>
 
+    <!-- vehicle
+          vehicleMobile
+          vehicleYear
+          vehicleMake
+          vehicleModel
+          vehicleColor
+          vehicleVin6
+    -->
+    <!-- mobile -->
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="vehicleMobileId"
+        >Mobile Number</label
+      >
+      <div class="col-md-8">
+        <input
+          class="form-control"
+          formControlName="vehicleMobile"
+          id="vehicleMobileId"
+          placeholder="Mobile number for scoring"
+          [ngClass]="{
+            'is-invalid':
+              (registrationForm.get('vehicleMobile')?.touched ||
+                registrationForm.get('vehicleMobile')?.dirty) &&
+              !registrationForm.get('vehicleMobile')?.valid
+          }"
+        />
+        <span class="invalid-feedback">
+          <span *ngIf="registrationForm.get('vehicleMobile')?.errors?.required">
+            Please enter your mobile number.
+          </span>
+          <span *ngIf="registrationForm.get('vehicleMobile')?.errors?.pattern">
+            Please enter a valid mobile number.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- year -->
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="vehicleYearId"
+        >Vehicle Year</label
+      >
+      <div class="col-md-8">
+        <input
+          class="form-control"
+          formControlName="vehicleYear"
+          id="vehicleYearId"
+          type="number"
+          [ngClass]="{
+            'is-invalid':
+              (registrationForm.get('vehicleYear')?.touched ||
+                registrationForm.get('vehicleYear')?.dirty) &&
+              !registrationForm.get('vehicleYear')?.valid
+          }"
+        />
+        <span class="invalid-feedback">
+          <span *ngIf="registrationForm.get('vehicleYear')?.errors?.required">
+            Please enter vehicle year.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Make -->
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="vehicleMakeId"
+        >Vehicle Make</label
+      >
+      <div class="col-md-8">
+        <input
+          class="form-control"
+          formControlName="vehicleMake"
+          id="vehicleMakeId"
+          type="text"
+          [ngClass]="{
+            'is-invalid':
+              (registrationForm.get('vehicleMake')?.touched ||
+                registrationForm.get('vehicleMake')?.dirty) &&
+              !registrationForm.get('vehicleMake')?.valid
+          }"
+        />
+        <span class="invalid-feedback">
+          <span *ngIf="registrationForm.get('vehicleMake')?.errors?.required">
+            Please enter vehicle Make.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Model -->
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="vehicleModelId"
+        >Vehicle Model</label
+      >
+      <div class="col-md-8">
+        <input
+          class="form-control"
+          formControlName="vehicleModel"
+          id="vehicleModelId"
+          type="text"
+          [ngClass]="{
+            'is-invalid':
+              (registrationForm.get('vehicleModel')?.touched ||
+                registrationForm.get('vehicleModel')?.dirty) &&
+              !registrationForm.get('vehicleModel')?.valid
+          }"
+        />
+        <span class="invalid-feedback">
+          <span *ngIf="registrationForm.get('vehicleModel')?.errors?.required">
+            Please enter vehicle Model.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Color -->
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="vehicleColorId"
+        >Vehicle Color</label
+      >
+      <div class="col-md-8">
+        <input
+          class="form-control"
+          formControlName="vehicleColor"
+          id="vehicleColorId"
+          type="text"
+          [ngClass]="{
+            'is-invalid':
+              (registrationForm.get('vehicleColor')?.touched ||
+                registrationForm.get('vehicleColor')?.dirty) &&
+              !registrationForm.get('vehicleColor')?.valid
+          }"
+        />
+        <span class="invalid-feedback">
+          <span *ngIf="registrationForm.get('vehicleColor')?.errors?.required">
+            Please enter vehicle Color.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Vin6 -->
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label" for="vehicleVin6Id"
+        >Vehicle VIN (last 6)</label
+      >
+      <div class="col-md-8">
+        <input
+          class="form-control"
+          formControlName="vehicleVin6"
+          id="vehicleVin6Id"
+          type="text"
+          [ngClass]="{
+            'is-invalid':
+              (registrationForm.get('vehicleVin6')?.touched ||
+                registrationForm.get('vehicleVin6')?.dirty) &&
+              !registrationForm.get('vehicleVin6')?.valid
+          }"
+        />
+        <span class="invalid-feedback">
+          <span *ngIf="registrationForm.get('vehicleVin6')?.errors?.required">
+            Please enter vehicle VIN (last 6 numbers).
+          </span>
+        </span>
+      </div>
+    </div>
+
     <!-- save button -->
     <div class="form-group row mb-2">
       <div class="offset-md-2 col-md-4">
@@ -105,4 +272,5 @@ Valid: {{ registrationForm.valid }}
 Value:
 {{ registrationForm.value | json }}
 <br />
-{{ registrationForm.get("riderName")?.valid }}
+Mobile:
+{{ registrationForm.get("vehicleMobile")?.valid }}

@@ -1,11 +1,11 @@
 export class Vehicle {
   constructor(
     mobile: string, // index
-    year: string,
+    year: number,
     make: string,
     model: string,
     color: string,
-    vin4: string, // last 4 numbers
+    vin6: string, // last 6 numbers
     active: boolean
   ) {}
 }

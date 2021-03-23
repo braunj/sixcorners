@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { DataService } from '../data/data.service';
 import { Rider } from '../data/Rider';
+import { Vehicle } from '../data/Vehicle';
 
 @Component({
   selector: 'app-registration',
@@ -11,6 +12,9 @@ import { Rider } from '../data/Rider';
 })
 export class RegistrationComponent implements OnInit {
   rider = new Rider('', '', '', '', true, '', '');
+  year = new Date().getFullYear();
+  vehicle = new Vehicle('', this.year, '', '', '', '', false);
+
   registrationForm: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder, private data: DataService) {}
@@ -27,6 +31,24 @@ export class RegistrationComponent implements OnInit {
       ],
       riderEmail: ['', [Validators.required, Validators.email]],
       riderEmailUpdates: true,
+      vehicleMobile: [
+        '',
+        [
+          Validators.required,
+          // Validators.pattern(
+          //   '/^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$/im'
+          // ),
+        ],
+      ],
+      vehicleYear: [this.year, Validators.required],
+      vehicleMake: ['', Validators.required],
+      vehicleModel: ['', Validators.required],
+      vehicleColor: ['', Validators.required],
+      vehicleVin6: [
+        '',
+        [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
+      ],
+      vehicleActive: [false],
     });
   }
 
