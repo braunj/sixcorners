@@ -10,10 +10,10 @@
       <div class="col-md-8">
         <input
           class="form-control"
-          formControlName="riderName"
           id="riderNameId"
           type="text"
           placeholder="Enter your name"
+          formControlName="riderName"
           [ngClass]="{
             'is-invalid':
               (registrationForm.get('riderName')?.touched ||
@@ -82,6 +82,7 @@
       >
       <div class="col-md-8">
         <input
+          type="tel"
           class="form-control"
           formControlName="vehicleMobile"
           id="vehicleMobileId"
