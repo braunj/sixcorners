@@ -5,7 +5,7 @@ export class Vehicle {
     public make: string,
     public model: string,
     public color: string,
-    public vin6: string, // last 6 numbers
+    public plate: string,
     public active: boolean
   ) {}
 }

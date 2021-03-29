@@ -214,26 +214,26 @@
 
     <!-- Vin6 -->
     <div class="form-group row mb-2">
-      <label class="col-md-2 col-form-label" for="vehicleVin6Id"
-        >Vehicle VIN (last 6)</label
+      <label class="col-md-2 col-form-label" for="vehiclePlateId"
+        >License Plate</label
       >
       <div class="col-md-8">
         <input
           class="form-control"
-          formControlName="vehicleVin6"
-          placeholder="Last 6 of VIN"
-          id="vehicleVin6Id"
+          formControlName="vehiclePlate"
+          placeholder="License plate number"
+          id="vehiclePlateId"
           type="text"
           [ngClass]="{
             'is-invalid':
-              (registrationForm.get('vehicleVin6')?.touched ||
-                registrationForm.get('vehicleVin6')?.dirty) &&
-              !registrationForm.get('vehicleVin6')?.valid
+              (registrationForm.get('vehiclePlate')?.touched ||
+                registrationForm.get('vehiclePlate')?.dirty) &&
+              !registrationForm.get('vehiclePlate')?.valid
           }"
         />
         <span class="invalid-feedback">
-          <span *ngIf="registrationForm.get('vehicleVin6')?.errors?.required">
-            Please enter vehicle VIN (last 6 numbers).
+          <span *ngIf="registrationForm.get('vehiclePlate')?.errors?.required">
+            Please enter your license plate number.
           </span>
         </span>
       </div>

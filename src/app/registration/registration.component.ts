@@ -43,10 +43,7 @@ export class RegistrationComponent implements OnInit {
       vehicleMake: ['', Validators.required],
       vehicleModel: ['', Validators.required],
       vehicleColor: ['', Validators.required],
-      vehicleVin6: [
-        '',
-        [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
-      ],
+      vehiclePlate: ['', [Validators.required]],
       vehicleActive: [false],
     });
   }
