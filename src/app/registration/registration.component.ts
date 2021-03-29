@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { DataService } from '../data/data.service';
@@ -11,6 +11,8 @@ import { Vehicle } from '../data/Vehicle';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
+  @ViewChild('riderName') riderName?: ElementRef | null;
+
   rider = new Rider('', '', '', '', true, '', '');
   year = new Date().getFullYear();
   vehicle = new Vehicle('', this.year, '', '', '', '', false);
@@ -46,6 +48,10 @@ export class RegistrationComponent implements OnInit {
       vehiclePlate: ['', [Validators.required]],
       vehicleActive: [false],
     });
+  }
+
+  ngAfterViewInit() {
+    this.riderName?.nativeElement.focus();
   }
 
   onSubmit() {

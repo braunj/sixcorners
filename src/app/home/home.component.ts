@@ -33,7 +33,10 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('onInit');
+    document?.getElementById('name')?.focus();
+  }
 
   onFocus(field: NgModel) {
     console.log('onFocus', field.pristine);

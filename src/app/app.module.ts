@@ -12,9 +12,10 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { RulesComponent } from './rules/rules.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegistrationComponent, RulesComponent],
+  declarations: [AppComponent, HomeComponent, RegistrationComponent, RulesComponent, ResultsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -6,11 +6,12 @@
   >
     <!-- name -->
     <div class="form-group row mb-2">
-      <label class="col-md-2 col-form-label" for="riderNameId">Name</label>
+      <label class="col-md-2 col-form-label" for="riderName">Name</label>
       <div class="col-md-8">
         <input
           class="form-control"
-          id="riderNameId"
+          id="riderName"
+          #riderName
           type="text"
           placeholder="Enter your name"
           formControlName="riderName"
@@ -262,7 +263,7 @@
     </div>
   </form>
 </div>
-<br />
+<!-- <br />
 Dirty: {{ registrationForm.dirty }}
 <br />
 Touched:
@@ -274,4 +275,4 @@ Value:
 {{ registrationForm.value | json }}
 <br />
 Mobile:
-{{ registrationForm.get("vehicleMobile")?.valid }}
+{{ registrationForm.get("vehicleMobile")?.valid }} -->
